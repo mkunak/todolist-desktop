@@ -3,6 +3,8 @@ const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 
+process.env.NODE_ENV = 'production';
+
 let mainWindow;
 let addWindow;
 
@@ -34,9 +36,13 @@ const mainMenuTemplate = [
   {
     label: 'File',
     submenu: [
-      { label: 'Add item', click: () => createAddItemWindow() },
       {
-        label: 'Remove items',
+        label: 'Add item',
+        accelerator: 'Ctrl+P',
+        click: () => createAddItemWindow(),
+      },
+      {
+        label: 'Clear list',
 
         click: () => {
           mainWindow.webContents.send('list:clear');
@@ -54,8 +60,10 @@ const mainMenuTemplate = [
 // Listen for app to be ready:
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 900,
+    width: 800,
     height: 500,
+    minWidth: 370,
+    minHeight: 400,
     webPreferences: {
       nodeIntegration: true,
     },

@@ -1,11 +1,14 @@
 {
-  "name": "todolist-desktop",
+  "name": "shoppinglist",
   "version": "1.0.0",
-  "description": "Todolist Desktop",
+  "description": "Shoppinglist Desktop",
   "main": "src/main.js",
   "scripts": {
     "start": "electron src/main.js",
-    "test": ""
+    "package-mac": "electron-packager src/main.js shoppinglist --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager src/main.js shoppinglist --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Shoppinglist\"",
+    "package-linux": "electron-packager . shoppinglist --overwrite --asar --platform=linux --arch=x64 --icon=src/assets/icons/png/icon.png --prune=true --out=release-builds",
+    "create-debian-installer": "electron-installer-debian --src release-builds/shoppinglist-linux-x64/ --dest release-builds/installers/ --arch amd64"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,8 @@
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.1.0",
     "eslint": "^7.12.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.14.0",
