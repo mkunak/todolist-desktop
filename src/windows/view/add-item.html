@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../../../node_modules/materialize-css/dist/css/materialize.min.css"/>
+  <title>Add item</title>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <h3>What should be bought?</h3>
+      <div class="row">
+        <div class="input-field col s8">
+          <input type="text" class="validate" id="todo-item-name">
+          <label for="todo-item-name">Item name</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="text" class="validate" id="todo-item-quant">
+          <label for="todo-item-quant">Quantity</label>
+        </div>
+      </div>
+      <button class="btn" type="submit">Add item</button>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script src="../actions/add-item.js"></script>
+</body>
+</html>

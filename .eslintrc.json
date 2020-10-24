@@ -20,6 +20,10 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "comma-dangle": ["error", "only-multiline"],
+        "max-len": ["error", { "code": 80 }],
+        "no-param-reassign": ["error"],
+        "no-use-before-define": ["error", { "functions": false }]
     }
 }

@@ -2,10 +2,10 @@
   "name": "todolist-desktop",
   "version": "1.0.0",
   "description": "Todolist Desktop",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "elctron src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron src/main.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/mkunak/todolist-desktop#readme",
   "dependencies": {
-    "electron": "^10.1.5"
+    "electron": "^10.1.5",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "eslint": "^7.12.0",
